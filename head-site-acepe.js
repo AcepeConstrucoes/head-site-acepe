@@ -1,13 +1,12 @@
 /*
   ACEPE — Hero em Custom Element para Wix
 
-  COMO USAR NO WIX:
-  1. Suba este arquivo como: head-site-acepe.js
-  2. Use no Wix a URL:
-     https://cdn.jsdelivr.net/gh/AcepeConstrucoes/head-site-acepe@main/head-site-acepe.js
-  3. Adicione um Elemento Personalizado / Custom Element.
-  4. URL do servidor: cole a URL acima.
-  5. Nome da tag: acepe-hero
+  USO NO WIX:
+  URL do servidor:
+  https://cdn.jsdelivr.net/gh/AcepeConstrucoes/head-site-acepe@main/head-site-acepe.js
+
+  Nome da tag:
+  acepe-hero
 */
 
 (function () {
@@ -17,9 +16,7 @@
   const PRIMARY_BUTTON_URL = "PASTE_PRIMARY_BUTTON_URL_HERE";
   const SECONDARY_BUTTON_URL = "PASTE_SECONDARY_BUTTON_URL_HERE";
 
-  if (typeof window === "undefined" || !window.customElements || !window.HTMLElement) {
-    return;
-  }
+  if (typeof window === "undefined" || !window.customElements || !window.HTMLElement) return;
 
   class AcepeHero extends HTMLElement {
     constructor() {
@@ -37,7 +34,7 @@
           :host {
             display: block;
             width: 100%;
-            min-height: 1000px;
+            min-height: 880px;
             font-family: Arial, Helvetica, sans-serif;
             -webkit-font-smoothing: antialiased;
           }
@@ -57,7 +54,7 @@
 
           .acepe-hero {
             position: relative;
-            min-height: 1000px;
+            min-height: 880px;
             background: #142A45;
             overflow: hidden;
             color: white;
@@ -85,13 +82,13 @@
             );
           }
 
-          .acepe-spacer-header {
+          /* Espaço reservado para o menu manual do Wix */
+          .acepe-menu-space {
             position: relative;
             z-index: 3;
-            height: 180px;
+            height: 150px;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
           }
 
           .acepe-container {
@@ -100,12 +97,12 @@
             width: 100%;
             max-width: 1400px;
             margin: 0 auto;
-            min-height: 880px;
+            min-height: 650px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 56px;
-            align-items: stretch;
-            padding: 0 24px 72px;
+            align-items: center;
+            padding: 0 24px 64px;
           }
 
           .acepe-left {
@@ -115,37 +112,37 @@
           }
 
           .acepe-left h1 {
-            max-width: 780px;
+            max-width: 700px;
             color: #ffffff;
-            font-size: clamp(46px, 4.8vw, 72px);
-            line-height: 0.95;
-            letter-spacing: -0.06em;
+            font-size: clamp(44px, 4.6vw, 68px);
+            line-height: 0.98;
+            letter-spacing: -0.055em;
             font-weight: 900;
           }
 
           .acepe-left p {
-            margin-top: 32px;
-            max-width: 640px;
+            margin-top: 24px;
+            max-width: 600px;
             color: rgba(255, 255, 255, 0.72);
-            font-size: 19px;
-            line-height: 1.8;
+            font-size: 18px;
+            line-height: 1.65;
           }
 
           .acepe-actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 16px;
             margin-top: 32px;
           }
 
           .acepe-btn {
-            height: 52px;
+            height: 50px;
             padding: 0 28px;
             border-radius: 999px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             transition: 0.3s ease;
             white-space: nowrap;
@@ -166,8 +163,8 @@
           }
 
           .acepe-btn-primary span {
-            margin-left: 12px;
-            font-size: 19px;
+            margin-left: 10px;
+            font-size: 20px;
             line-height: 1;
           }
 
@@ -185,14 +182,14 @@
           .acepe-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-top: 40px;
-            max-width: 680px;
+            gap: 14px;
+            margin-top: 38px;
+            max-width: 640px;
           }
 
           .acepe-stat-card {
-            padding: 20px;
-            border-radius: 24px;
+            padding: 18px;
+            border-radius: 20px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -208,19 +205,19 @@
 
           .acepe-stat-card span {
             display: block;
-            margin-top: 10px;
+            margin-top: 8px;
             color: rgba(255, 255, 255, 0.6);
-            font-size: 14px;
-            line-height: 1.45;
+            font-size: 13px;
+            line-height: 1.4;
           }
 
           .acepe-right {
             position: relative;
-            min-height: 640px;
-            border-radius: 40px;
+            min-height: 620px;
+            border-radius: 34px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 26px 70px rgba(0, 0, 0, 0.32);
           }
 
           .acepe-right img {
@@ -232,11 +229,11 @@
 
           .acepe-method-card {
             position: absolute;
-            left: 24px;
-            right: 24px;
-            bottom: 24px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
             padding: 20px;
-            border-radius: 28px;
+            border-radius: 24px;
             background: rgba(20, 42, 69, 0.82);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(12px);
@@ -244,7 +241,7 @@
 
           .acepe-method-card small {
             color: #8DB5DD;
-            font-size: 11px;
+            font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 0.2em;
             font-weight: 700;
@@ -253,38 +250,38 @@
           .acepe-method-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 16px;
           }
 
           .acepe-method-item {
-            height: 96px;
-            border-radius: 18px;
+            height: 86px;
+            border-radius: 16px;
             background: rgba(255, 255, 255, 0.05);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 12px;
+            padding: 10px;
             text-align: center;
           }
 
           .acepe-method-item span {
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #8DB5DD;
-            font-size: 28px;
+            font-size: 30px;
             line-height: 1;
           }
 
           .acepe-method-item p {
-            margin: 12px 0 0;
-            min-height: 32px;
+            margin: 10px 0 0;
+            min-height: 30px;
             color: rgba(255, 255, 255, 0.72);
-            font-size: 12px;
+            font-size: 11px;
             line-height: 1.3;
           }
 
@@ -306,15 +303,15 @@
               background: rgba(20, 42, 69, 0.86);
             }
 
-            .acepe-spacer-header {
-              height: 80px;
+            .acepe-menu-space {
+              height: 96px;
             }
 
             .acepe-container {
               min-height: auto;
               grid-template-columns: 1fr;
-              gap: 48px;
-              padding: 12px 24px 56px;
+              gap: 40px;
+              padding: 16px 24px 64px;
             }
 
             .acepe-left h1 {
@@ -323,12 +320,12 @@
             }
 
             .acepe-left p {
-              font-size: 18px;
-              line-height: 1.65;
+              font-size: 17px;
+              line-height: 1.6;
             }
 
             .acepe-right {
-              min-height: 540px;
+              min-height: 500px;
             }
 
             .acepe-stats {
@@ -350,7 +347,7 @@
             }
 
             .acepe-method-item {
-              height: 86px;
+              height: 78px;
             }
           }
         </style>
@@ -362,7 +359,7 @@
 
           <div class="acepe-overlay"></div>
 
-          <div class="acepe-spacer-header"></div>
+          <div class="acepe-menu-space"></div>
 
           <div class="acepe-container">
             <div class="acepe-left">
@@ -434,15 +431,4 @@
   if (!window.customElements.get("acepe-hero")) {
     window.customElements.define("acepe-hero", AcepeHero);
   }
-
-  window.runAcepeHeroSmokeTests = function () {
-    return {
-      customElementDefined: !!window.customElements.get("acepe-hero"),
-      hasHeroVideo: HERO_VIDEO_URL.startsWith("https://video.wixstatic.com/"),
-      hasFrontImage: HERO_CARD_IMAGE.startsWith("https://static.wixstatic.com/"),
-      hasPrimaryButtonPlaceholder: PRIMARY_BUTTON_URL === "PASTE_PRIMARY_BUTTON_URL_HERE",
-      hasSecondaryButtonPlaceholder: SECONDARY_BUTTON_URL === "PASTE_SECONDARY_BUTTON_URL_HERE",
-      hasThirtyMetric: true,
-    };
-  };
 })();
