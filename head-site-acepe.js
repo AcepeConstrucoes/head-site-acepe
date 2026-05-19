@@ -1,5 +1,5 @@
 /*
-  ACEPE — Hero em Custom Element para Wix
+  ACEPE — Hero Custom Element para Wix
 
   USO NO WIX:
   URL do servidor:
@@ -34,7 +34,6 @@
           :host {
             display: block;
             width: 100%;
-            min-height: 880px;
             font-family: Arial, Helvetica, sans-serif;
             -webkit-font-smoothing: antialiased;
           }
@@ -54,17 +53,19 @@
 
           .acepe-hero {
             position: relative;
-            min-height: 880px;
-            background: #142A45;
+            height: 100vh;
+            min-height: 760px;
+            max-height: 920px;
             overflow: hidden;
+            background: #142A45;
             color: white;
           }
 
           .acepe-video {
             position: absolute;
-            top: 0;
             left: 0;
-            width: 62%;
+            top: 0;
+            width: 60%;
             height: 100%;
             object-fit: cover;
             opacity: 0.6;
@@ -76,19 +77,16 @@
             background: linear-gradient(
               to left,
               #142A45 0%,
-              #142A45 48%,
-              rgba(20, 42, 69, 0.88) 62%,
+              rgba(20, 42, 69, 0.95) 50%,
               rgba(20, 42, 69, 0.15) 100%
             );
           }
 
-          /* Espaço reservado para o menu manual do Wix */
           .acepe-menu-space {
             position: relative;
-            z-index: 3;
-            height: 150px;
-            max-width: 1400px;
-            margin: 0 auto;
+            z-index: 2;
+            height: 175px;
+            width: 100%;
           }
 
           .acepe-container {
@@ -96,25 +94,28 @@
             z-index: 2;
             width: 100%;
             max-width: 1400px;
+            height: calc(100% - 175px);
             margin: 0 auto;
-            min-height: 650px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 0.95fr 0.9fr;
+            align-items: stretch;
             gap: 56px;
-            align-items: center;
-            padding: 0 24px 64px;
+            padding: 0 24px 32px;
           }
 
           .acepe-left {
+            height: min(640px, calc(100vh - 215px));
+            min-height: 560px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
+            padding-top: 8px;
           }
 
           .acepe-left h1 {
-            max-width: 700px;
+            max-width: 650px;
             color: #ffffff;
-            font-size: clamp(44px, 4.6vw, 68px);
+            font-size: clamp(56px, 5.3vw, 82px);
             line-height: 0.98;
             letter-spacing: -0.055em;
             font-weight: 900;
@@ -122,27 +123,27 @@
 
           .acepe-left p {
             margin-top: 24px;
-            max-width: 600px;
+            max-width: 570px;
             color: rgba(255, 255, 255, 0.72);
-            font-size: 18px;
-            line-height: 1.65;
+            font-size: 22px;
+            line-height: 1.72;
           }
 
           .acepe-actions {
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
-            margin-top: 32px;
+            margin-top: 24px;
           }
 
           .acepe-btn {
-            height: 50px;
-            padding: 0 28px;
+            height: 56px;
+            padding: 0 36px;
             border-radius: 999px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 15px;
+            font-size: 17px;
             font-weight: 700;
             transition: 0.3s ease;
             white-space: nowrap;
@@ -155,7 +156,7 @@
           .acepe-btn-primary {
             background: #2F5D8C;
             color: #ffffff;
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
           }
 
           .acepe-btn-primary:hover {
@@ -163,7 +164,7 @@
           }
 
           .acepe-btn-primary span {
-            margin-left: 10px;
+            margin-left: 8px;
             font-size: 20px;
             line-height: 1;
           }
@@ -172,7 +173,7 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             background: rgba(255, 255, 255, 0.05);
             color: #ffffff;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
           }
 
           .acepe-btn-secondary:hover {
@@ -182,23 +183,22 @@
           .acepe-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin-top: 38px;
-            max-width: 640px;
+            gap: 12px;
+            max-width: 610px;
           }
 
           .acepe-stat-card {
-            padding: 18px;
-            border-radius: 20px;
+            padding: 16px;
+            border-radius: 18px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
           }
 
           .acepe-stat-card strong {
             display: block;
             color: #8DB5DD;
-            font-size: 28px;
+            font-size: 34px;
             font-weight: 900;
             line-height: 1;
           }
@@ -207,17 +207,28 @@
             display: block;
             margin-top: 8px;
             color: rgba(255, 255, 255, 0.6);
-            font-size: 13px;
-            line-height: 1.4;
+            font-size: 14px;
+            line-height: 1.35;
           }
 
           .acepe-right {
             position: relative;
-            min-height: 620px;
-            border-radius: 34px;
+            height: min(640px, calc(100vh - 215px));
+            min-height: 560px;
             overflow: hidden;
+            border-radius: 36px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 26px 70px rgba(0, 0, 0, 0.32);
+          }
+
+          .acepe-right::before {
+            content: "";
+            position: absolute;
+            inset: -40px;
+            z-index: -1;
+            border-radius: 48px;
+            background: rgba(47, 93, 140, 0.2);
+            filter: blur(48px);
           }
 
           .acepe-right img {
@@ -227,13 +238,19 @@
             display: block;
           }
 
+          .acepe-right-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, #142A45 0%, transparent 62%);
+          }
+
           .acepe-method-card {
             position: absolute;
             left: 20px;
             right: 20px;
             bottom: 20px;
             padding: 20px;
-            border-radius: 24px;
+            border-radius: 22px;
             background: rgba(20, 42, 69, 0.82);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(12px);
@@ -250,48 +267,46 @@
           .acepe-method-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            gap: 12px;
             margin-top: 16px;
           }
 
           .acepe-method-item {
-            height: 86px;
-            border-radius: 16px;
+            height: 92px;
+            border-radius: 14px;
             background: rgba(255, 255, 255, 0.05);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            padding: 12px 8px;
             text-align: center;
           }
 
           .acepe-method-item span {
-            width: 34px;
-            height: 34px;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #8DB5DD;
-            font-size: 30px;
+            font-size: 36px;
             line-height: 1;
           }
 
           .acepe-method-item p {
-            margin: 10px 0 0;
-            min-height: 30px;
+            margin: 8px 0 0;
+            min-height: 28px;
             color: rgba(255, 255, 255, 0.72);
-            font-size: 11px;
-            line-height: 1.3;
+            font-size: 13px;
+            line-height: 1.25;
           }
 
           @media (max-width: 980px) {
-            :host {
-              min-height: auto;
-            }
-
             .acepe-hero {
-              min-height: auto;
+              height: auto;
+              min-height: 100vh;
+              max-height: none;
             }
 
             .acepe-video {
@@ -304,32 +319,39 @@
             }
 
             .acepe-menu-space {
-              height: 96px;
+              height: 120px;
             }
 
             .acepe-container {
-              min-height: auto;
+              height: auto;
               grid-template-columns: 1fr;
               gap: 40px;
-              padding: 16px 24px 64px;
+              padding: 0 24px 64px;
+            }
+
+            .acepe-left {
+              height: auto;
+              min-height: auto;
             }
 
             .acepe-left h1 {
-              font-size: 42px;
+              font-size: 46px;
               letter-spacing: -0.04em;
             }
 
             .acepe-left p {
-              font-size: 17px;
+              font-size: 18px;
               line-height: 1.6;
-            }
-
-            .acepe-right {
-              min-height: 500px;
             }
 
             .acepe-stats {
               grid-template-columns: 1fr;
+              margin-top: 32px;
+            }
+
+            .acepe-right {
+              height: auto;
+              min-height: 520px;
             }
           }
 
@@ -347,7 +369,7 @@
             }
 
             .acepe-method-item {
-              height: 78px;
+              height: 82px;
             }
           }
         </style>
@@ -363,21 +385,23 @@
 
           <div class="acepe-container">
             <div class="acepe-left">
-              <h1>Sua residência construída com excelência.</h1>
+              <div>
+                <h1>Sua residência construída com excelência.</h1>
 
-              <p>
-                Engenharia, gestão e execução para transformar projetos exclusivos em obras sólidas, elegantes e bem conduzidas.
-              </p>
+                <p>
+                  Engenharia, gestão e execução para transformar projetos exclusivos em obras sólidas, elegantes e bem conduzidas.
+                </p>
 
-              <div class="acepe-actions">
-                <a href="${PRIMARY_BUTTON_URL}" class="acepe-btn acepe-btn-primary">
-                  Solicitar orçamento
-                  <span>→</span>
-                </a>
+                <div class="acepe-actions">
+                  <a href="${PRIMARY_BUTTON_URL}" class="acepe-btn acepe-btn-primary">
+                    Solicitar orçamento
+                    <span>→</span>
+                  </a>
 
-                <a href="${SECONDARY_BUTTON_URL}" class="acepe-btn acepe-btn-secondary">
-                  Ver obras realizadas
-                </a>
+                  <a href="${SECONDARY_BUTTON_URL}" class="acepe-btn acepe-btn-secondary">
+                    Ver obras realizadas
+                  </a>
+                </div>
               </div>
 
               <div class="acepe-stats">
@@ -400,6 +424,7 @@
 
             <div class="acepe-right">
               <img src="${HERO_CARD_IMAGE}" alt="Acepe Construções" />
+              <div class="acepe-right-gradient"></div>
 
               <div class="acepe-method-card">
                 <small>Método Acepe</small>
