@@ -34,7 +34,7 @@
           :host {
             display: block;
             width: 100%;
-            height: 100%;
+            height: 900px;
             font-family: Arial, Helvetica, sans-serif;
             -webkit-font-smoothing: antialiased;
           }
@@ -55,8 +55,8 @@
           .acepe-hero {
             position: relative;
             width: 100%;
-            height: 100%;
-            min-height: 900px;
+            height: 900px;
+            
             overflow: hidden;
             background: #142A45;
             color: white;
@@ -67,7 +67,7 @@
             left: 0;
             top: 0;
             width: 60%;
-            height: 100%;
+            height: 900px;
             object-fit: cover;
             opacity: 0.6;
           }
@@ -87,8 +87,8 @@
             position: relative;
             z-index: 2;
             width: min(1400px, calc(100% - 48px));
-            height: 100%;
-            min-height: 900px;
+            height: 900px;
+            
             margin: 0 auto;
             display: grid;
             grid-template-columns: 0.95fr 0.9fr;
@@ -234,7 +234,7 @@
 
           .acepe-right img {
             width: 100%;
-            height: 100%;
+            height: 900px;
             object-fit: cover;
             display: block;
           }
@@ -319,9 +319,12 @@
           }
 
           @media (max-width: 980px) {
+            :host {
+              height: auto;
+            }
             .acepe-hero {
               height: auto;
-              min-height: 100vh;
+              min-height: 900px;
             }
 
             .acepe-video {
