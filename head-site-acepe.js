@@ -34,6 +34,7 @@
           :host {
             display: block;
             width: 100%;
+            height: 100%;
             font-family: Arial, Helvetica, sans-serif;
             -webkit-font-smoothing: antialiased;
           }
@@ -53,9 +54,9 @@
 
           .acepe-hero {
             position: relative;
-            height: 100vh;
-            min-height: 760px;
-            max-height: 920px;
+            width: 100%;
+            height: 100%;
+            min-height: 900px;
             overflow: hidden;
             background: #142A45;
             color: white;
@@ -82,34 +83,36 @@
             );
           }
 
-          .acepe-menu-space {
-            position: relative;
-            z-index: 2;
-            height: 175px;
-            width: 100%;
-          }
-
           .acepe-container {
             position: relative;
             z-index: 2;
-            width: 100%;
-            max-width: 1400px;
-            height: calc(100% - 175px);
+            width: min(1400px, calc(100% - 48px));
+            height: 100%;
+            min-height: 900px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 0.95fr 0.9fr;
-            align-items: stretch;
+            align-items: start;
             gap: 56px;
-            padding: 0 24px 32px;
+            padding-top: 175px;
+            padding-bottom: 32px;
+          }
+
+          .acepe-left,
+          .acepe-right {
+            height: 640px;
+            min-height: 560px;
           }
 
           .acepe-left {
-            height: min(640px, calc(100vh - 215px));
-            min-height: 560px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             padding-top: 8px;
+          }
+
+          .acepe-copy-group {
+            display: block;
           }
 
           .acepe-left h1 {
@@ -213,8 +216,6 @@
 
           .acepe-right {
             position: relative;
-            height: min(640px, calc(100vh - 215px));
-            min-height: 560px;
             overflow: hidden;
             border-radius: 36px;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -302,11 +303,25 @@
             line-height: 1.25;
           }
 
+          @media (max-width: 1200px) {
+            .acepe-left,
+            .acepe-right {
+              height: 600px;
+            }
+
+            .acepe-left h1 {
+              font-size: clamp(50px, 5vw, 70px);
+            }
+
+            .acepe-left p {
+              font-size: 20px;
+            }
+          }
+
           @media (max-width: 980px) {
             .acepe-hero {
               height: auto;
               min-height: 100vh;
-              max-height: none;
             }
 
             .acepe-video {
@@ -318,18 +333,18 @@
               background: rgba(20, 42, 69, 0.86);
             }
 
-            .acepe-menu-space {
-              height: 120px;
-            }
-
             .acepe-container {
+              width: min(100% - 32px, 1400px);
               height: auto;
+              min-height: auto;
               grid-template-columns: 1fr;
               gap: 40px;
-              padding: 0 24px 64px;
+              padding-top: 120px;
+              padding-bottom: 64px;
             }
 
-            .acepe-left {
+            .acepe-left,
+            .acepe-right {
               height: auto;
               min-height: auto;
             }
@@ -350,7 +365,6 @@
             }
 
             .acepe-right {
-              height: auto;
               min-height: 520px;
             }
           }
@@ -381,11 +395,9 @@
 
           <div class="acepe-overlay"></div>
 
-          <div class="acepe-menu-space"></div>
-
           <div class="acepe-container">
             <div class="acepe-left">
-              <div>
+              <div class="acepe-copy-group">
                 <h1>Sua residência construída com excelência.</h1>
 
                 <p>
